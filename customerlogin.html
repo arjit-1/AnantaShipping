@@ -113,12 +113,13 @@
 						<p>Sector-128 Noida,India</p>
 					</div>
 					<div class="contact-bottom">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14306.848887847435!2d73.03986472365072!3d26.303427670342778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418d0f1298cedb%3A0x6553e3327b898cd8!2sAjanta+Shipping+%26+Logistics!5e0!3m2!1sen!2sin!4v1544762342342" width="600" height="400px" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14306.848887847435!2d73.03986472365072!3d26.303427670342778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418d0f1298cedb%3A0x6553e3327b898cd8!2sAjanta+Shipping+%26+Logistics!5e0!3m2!1sen!2sin!4v1544762342342" width="600" height="420px" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-md-6 w3layouts-reg-form contact-form-row-agileinfo">
 					
-					<form action="#" method="post" class="banner_form contact-inner-form">
+					<form action="#" method="post" class="banner_form contact-inner-form"  onsubmit="return checkform(this);"
+>
 						<div class="contact-form-left contact-field1">
 							<div class="sec-left">
 								<label class="contact-form-text">Login Id:</label>
@@ -126,12 +127,25 @@
 							</div>
 							<div class="sec-left">
 								<label class="contact-form-text">Password:</label>
-								<input placeholder="Password " name="first name" type="Password" style="width: 100%;height: 45px;" required="">
+								<input placeholder=" " name="first name" type="text" required="">
 							</div>
-							<div class="sec-left">
-								<label class="contact-form-text">Captcha:</label>
-								<input placeholder="" name="first name" type="text" required="">
-							</div>
+							<!-- START CAPTCHA -->
+						<br>
+						<div class="capbox">
+
+							<div id="CaptchaDiv"></div>
+
+							<div class="capbox-inner">
+							Type the above number:<br>
+
+							<input type="hidden" id="txtCaptcha">
+							<input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+
+						</div>
+						</div>
+						<br><br>
+<!-- END CAPTCHA -->
+
 							<p><a href="customer_forgot_password.html" style="color: white;">Forgot Password</a></p>
 							<p><b>Do not have an account?</b> <a href="customerregister.html" style="color: white;">Register</a></p>
 						
@@ -140,6 +154,56 @@
 						</div>
 						
 					</form>
+					<script type="text/javascript">
+
+// Captcha Script
+
+							function checkform(theform){
+							var why = "";
+
+							if(theform.CaptchaInput.value == ""){
+							why += "- Please Enter CAPTCHA Code.\n";
+							}
+							if(theform.CaptchaInput.value != ""){
+							if(ValidCaptcha(theform.CaptchaInput.value) == false){
+							why += "- The CAPTCHA Code Does Not Match.\n";
+							}
+							}
+							if(why != ""){
+							alert(why);
+							return false;
+							}
+							}
+
+							var a = Math.ceil(Math.random() * 9)+ '';
+							var b = Math.ceil(Math.random() * 9)+ '';
+							var c = Math.ceil(Math.random() * 9)+ '';
+							var d = Math.ceil(Math.random() * 9)+ '';
+							var e = Math.ceil(Math.random() * 9)+ '';
+							var f = Math.ceil(Math.random() * 9)+ '';
+
+
+							var code = a + b + c + d + e+f;
+							document.getElementById("txtCaptcha").value = code;
+							document.getElementById("CaptchaDiv").innerHTML = code;
+
+							// Validate input against the generated number
+							function ValidCaptcha(){
+							var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+							var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+							if (str1 == str2){
+							return true;
+							}else{
+							return false;
+							}
+							}
+
+// Remove the spaces from the entered and generated code
+							function removeSpaces(string){
+							return string.split(' ').join('');
+							}
+				</script>
+
 				</div>
 			
 			</div>
