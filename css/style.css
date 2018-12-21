@@ -10,6 +10,42 @@ body {
     background: #fff;
     font-family: 'Source Sans Pro', sans-serif;
 }
+.capbox {
+    background-color:white;
+    border: black 0px solid;
+    border-width: 0px 12px 0px 0px;
+    display: inline-block;
+    *display: inline; zoom: 1; /* FOR IE7-8 */
+    padding: 8px 40px 8px 8px;
+    width: 50%;
+    }
+
+.capbox-inner {
+    font: bold 11px arial, sans-serif;
+    color: solid black;
+    background-color:solid black;
+    margin: 5px auto 0px auto;
+    padding: 3px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    
+    }
+
+#CaptchaDiv {
+    font: bold 17px verdana, arial, sans-serif;
+    font-style: italic;
+    color: solid black;
+    background-color: solid black;
+    padding: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+     width: 100%;
+    }
+
+#CaptchaInput { margin: 1px 0px 1px 0px; width: 135px; }
+
 
 p {
     margin: 0;
