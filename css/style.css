@@ -190,6 +190,7 @@ li.nav-item {
     background-size: ;
     -webkit-background-size: center;
     width: 100%;
+    height: auto;
     -moz-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
