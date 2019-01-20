@@ -140,13 +140,13 @@
 			width: (100 / (slides + 2)) + '%',
 		});
 
-		img.each(function () {
-			var div = $('<div>', {'class': 'jislider__img'}).css({
-				backgroundImage: 'url(' + $(this).attr('src') + ')',
-			});
-			$(this).after(div);
-			$(this).remove();
-		});
+		// img.each(function () {
+		// 	var div = $('<div>', {'class': 'jislider__img'}).css({
+		// 		backgroundImage: 'url(' + $(this).attr('src') + ')',
+		// 	});
+		// 	$(this).after(div);
+		// 	$(this).remove();
+		// });
 
 		// animation
 		var animate = new Animate(slides, setting.start, setting.auto, setting.time, setting.stay, setting.easing, setting.reverse);
