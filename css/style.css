@@ -189,6 +189,7 @@ li.nav-item {
     background: url(../images/aruz.jpg) no-repeat center;
     background-size: ;
     -webkit-background-size: center;
+    width: 100%;
     -moz-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
